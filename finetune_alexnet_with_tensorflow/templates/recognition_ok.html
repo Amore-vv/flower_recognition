@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}" />
+    <title>花卉识别</title>
+</head>
+
+<body>
+<div class="bg1">
+    <h1 style="font-size: 50px;">花卉识别</h1>
+</div>
+
+    <form action="" enctype='multipart/form-data' method='POST' >
+        <table class="t1">
+            <td>
+                <a href="javascript:;" class="file">选择文件<input type="file" name="file" id=""></a>
+            </td>
+            <td>
+                <input class="file1" type="submit" value="开始识别" />
+            </td>
+        </table>
+    </form>
+<div class="bg2">
+    <img src="{{ url_for('static', filename= './test_img/test.jpg',_t=val1) }}" width="500px" alt="你的图片被外星人劫持了～～"/>
+</div>
+<div class="bg3">
+    <table>
+        <tr>
+            <td>
+                <h2 align="center">识别结果</h2>
+                <hr>
+                <p align="center">&nbsp;&nbsp;花卉名称：{{classname}}<br>
+                    &nbsp;&nbsp;译名：&nbsp;&nbsp;{{name}}</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2 align="center">百度百科</h2>
+                <hr>
+                <p>{{text}}&nbsp;&nbsp;<a href="{{url}}">更多>></a></p>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+
+</body>
+
+</html>
